@@ -24,5 +24,8 @@ if(isset($_SERVER['PATH_INFO'])){
 
     $router = explode('/', $_SERVER['PATH_INFO']);
     $controller = '\controllers\\'.ucfirst($router[1]) . 'Controller';
+
     $action = $router[2];
 }
+$c = new $controller;
+$c->$action();
